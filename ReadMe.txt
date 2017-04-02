@@ -1,6 +1,6 @@
-api consumtion using Jquery for Books catalog
 
-How to use:
+
+How to use application:
 1-clone the repository from https://github.com/mzzn28/BooksApiTreeLineProject
 2-load the project in Visual studio
 3-build and start the project.
