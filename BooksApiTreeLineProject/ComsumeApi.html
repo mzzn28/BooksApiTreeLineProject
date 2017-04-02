@@ -1,0 +1,82 @@
+﻿<!---
+    Assignment: web Api consumption using jquery.
+    Author:Mahmood Zmanan
+    Purpose: to test the coding competancy of candidate
+    !-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Book API</title>
+    <meta charset="utf-8" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var datatbl = $('#mydata');     //target element of data
+
+            $('#getbtn').click(function(){
+                $.ajax({
+                    type: "GET",
+                    url: 'api/Books',
+                    dataType: 'json',
+                    success: function (jsonObject) {
+                        var result = "<tr><th> Title </th><th> Author </th><th> ISBN </th><th> Price($) </th></tr>";
+                        $.each(jsonObject, function (index, val) {
+                            result += "<tr><td>" + val.title +"</td>";
+                            result += "<td>" + val.author +"</td>";
+                            result += "<td>" + val.isbn + "</td>";
+                            result += "<td>" + val.price + "</td>";
+                           
+                        });
+                        datatbl.empty();
+                        datatbl.append(result);
+                    }
+                });
+            });
+
+            $('#clrbtn').click(function () {
+                datatbl.empty();
+            });
+        });
+
+    </script>
+</head>
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <h4 style="color:aliceblue">Book Catalog Assignment  for Above the TreeLine </h4>
+            </div>
+        </div>
+    </div>
+        <br/><br/><br/>
+
+        <div style="margin:4px; padding:5px;"> 
+            <table>
+                <tr>
+                    <td>
+                        <label>Click to show record: </label>
+                    </td>
+                    <td>
+                        <input id="getbtn" type="button" value="Get Books" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Click to clear display: </label>
+                    </td>
+                    <td>
+                        <input id="clrbtn" type="button" value="Clear" />
+                    <td>
+                <tr>
+            </table><br/>
+            <table id="mydata" class="table-bordered">
+                
+
+            </table>
+</div>
+</body>
+</html>
