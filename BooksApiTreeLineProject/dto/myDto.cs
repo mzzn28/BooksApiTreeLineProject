@@ -23,23 +23,23 @@ namespace BooksApiTreeLineProject.dto
             title = "OCA Java SE 8 programmer study guide",
             author = "Kurniawan, Budi",
             isbn = "9781771970228",
-            price = 25.56,
+            price = 65.46,
             ifebook = true
         };
         Book book3 = new Book
         {
             title = "Java 8 lambdas ",
             author = "	Warburton, Richard ",
-            isbn = "6789065432",
-            price = 25.56,
+            isbn = "6789065432010",
+            price = 14.59,
             ifebook = true
         };
         Book book4 = new Book
         {
             title = "Tremendous technology inventions",
-            author = "	Marsico, Katie, ",
-            isbn = "567899012345",
-            price = 25.56,
+            author = "	Marsico, Katie ",
+            isbn = "5678909012345",
+            price = 125.36,
             ifebook = true
         };
         Book book5 = new Book
@@ -47,7 +47,7 @@ namespace BooksApiTreeLineProject.dto
             title = "Hama Yaran Dozukh",
             author = "A K Sager",
             isbn = "786443213456",
-            price = 25.56,
+            price = 5.26,
             ifebook = true
         };
         
